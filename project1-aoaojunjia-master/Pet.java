@@ -7,9 +7,9 @@ public class Pet {
     // FILL IN CODE: add a boolean instance variable called isAvailable that tells us whether the pet is available for adoption or not.
     // This variable should initially be set to true. If the pet is adopted, isAvailable should be set to false.
 
-    Boolean adopted;
-    String name, type, breed;
-    StringBuilder sb;
+    private Boolean adopted;
+    private String name, type, breed;
+
     /** Constructor of class Pet */
     public Pet(String name, String type, String breed) {
         // FILL IN CODE
@@ -17,7 +17,7 @@ public class Pet {
         this.name = name;
         this.type = type;
         this.breed = breed;
-        sb = new StringBuilder();
+
     }
 
     // FILL IN CODE: add getters as needed
@@ -40,6 +40,20 @@ public class Pet {
         // FILL IN CODE: return a string that contains the name, the type and the breed separated by comma
 
         return name + ", " + type + ", " + breed;
+    }
+
+    public String get_name(){
+        return name;
+    }
+    public String get_type(){
+        return type;
+    }
+    public String get_breed(){
+        return breed;
+    }
+
+    public boolean check_adopted(){
+        return adopted;
     }
 }
 

@@ -30,7 +30,7 @@ public class AnimalShelter {
         System.out.println("Pets available for adoption: ");
         // FILL IN CODE:
         for(Pet i : pets){
-            if(i.adopted){
+            if(i.check_adopted()){
                 System.out.println(i.toString());
             }
         }
@@ -47,14 +47,14 @@ public class AnimalShelter {
         }
         else if (breed.equals("") && !type.equals("")){
             for(Pet i : pets){
-                if(i.type.equals(type) && i.adopted){
+                if(i.get_type().equals(type) && i.check_adopted()){
                     System.out.println(i.toString());
                 }
             }
         }
         else if(type.equals("") && !breed.equals("")){
             for(Pet i : pets){
-                if(i.breed.equals(breed) && i.adopted){
+                if(i.get_breed().equals(breed) && i.check_adopted()){
                     System.out.println(i.toString());
                 }
             }
@@ -62,7 +62,7 @@ public class AnimalShelter {
         else{
             for(Pet i : pets){
 
-                if(i.breed.equals(breed) && i.type.equals(type) && i.adopted){
+                if(i.get_breed().equals(breed) && i.get_type().equals(type) && i.check_adopted()){
                     System.out.println(i.toString());
                 }
             }
@@ -75,7 +75,7 @@ public class AnimalShelter {
         // FILL IN CODE: find the pet with the given name (assume the name is unique), adopt it if available  and return true
         // If not available or no such name, return false
         for(Pet i : pets){
-            if(i.name.equals(petName) && i.adopted){
+            if(i.get_name().equals(petName) && i.check_adopted()){
                 return i.adopt();
             }
         }
